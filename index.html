@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<main>
-			<a href="index2.html"><img src="eye.png" alt="¡Ay!" class="blinky" /></a>
+			<a id="next" href="#"><img id="eye" src="eye.png" alt="¡Ay!" class="blinky" /></a>
 		</main>
 		<style>
 			body {
@@ -15,6 +15,22 @@
 				justify-content: center;
 				align-items: center;
 			}
+
+			#eye {
+				transition: transform 500ms cubic-bezier(1,0,0,1);
+				transform: scaleY(0);
+			}
 		</style>
+		<script>
+			document.getElementById('next').onclick = () => {
+				let eye = document.getElementById('eye');
+				eye.classList.remove('blinky');
+				eye.style.transform = 'scaleY(0)';
+
+				setTimeout(() => {
+					document.location = 'index2.html';
+				}, 2000);
+			}
+		</script>
 	</body>
 </html>
